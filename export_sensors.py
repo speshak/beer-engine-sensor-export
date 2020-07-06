@@ -52,7 +52,7 @@ def export_sensors(**task_input):
 
     res = requests.get(url, stream=True)
     res.raise_for_status()
-    key = (f"sensors/{task_input['session_id']}/"
+    key = (f"{task_input['session_id']}/sensors-"
            f"{info['ferm_id']}-{info['start']}-{info['end']}.json")
 
     with tempfile.TemporaryFile() as f:
